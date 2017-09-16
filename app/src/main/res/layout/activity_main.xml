@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="odomobileapplicationdevelopment.myasyncapp.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp"
+    >
 
     <ImageView
         android:layout_width="match_parent"
@@ -19,19 +21,28 @@
         android:layout_height="wrap_content"
         android:text="Do Work"
         android:onClick="StartDoingWork"
+        android:backgroundTint="@android:color/holo_red_light"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Do Async Work"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:onClick="StartDoingAsyncWork"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:text="Do Async Loader Work"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:onClick="StartDoingAsyncLoaderWork"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Switch"
         android:onClick="Switch"
         />
