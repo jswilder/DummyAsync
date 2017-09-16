@@ -2,6 +2,7 @@ package odomobileapplicationdevelopment.myasyncapp;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class HeavyTask extends AsyncTask {
         }
 
         Collections.sort(myArray);
+        Log.i("WILDER"," **** ---- Heavy Task Sorting Complete...");
         return null;
     }
 
@@ -49,6 +51,7 @@ public class HeavyTask extends AsyncTask {
     protected void onPostExecute(Object o) {
         Toast toast = Toast.makeText(context,"Async Complete", Toast.LENGTH_LONG);
         toast.show();
+        Log.i("WILDER"," **** ---- Heavy Task Post Execute");
         super.onPostExecute(o);
     }
 

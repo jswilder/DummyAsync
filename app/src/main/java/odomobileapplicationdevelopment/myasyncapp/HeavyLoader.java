@@ -2,6 +2,7 @@ package odomobileapplicationdevelopment.myasyncapp;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,9 +17,12 @@ public class HeavyLoader extends AsyncTaskLoader<List<Integer>>{
 
     Context context;
 
+    private String TAG = "WILDER";
+
     public HeavyLoader(Context context) {
         super(context);
         this.context = context;
+        Log.i(TAG," **** ---- Heavy Loader Constructor()...");
         Toast.makeText(this.context,"Loader Created",Toast.LENGTH_SHORT).show();
     }
 
@@ -33,12 +37,13 @@ public class HeavyLoader extends AsyncTaskLoader<List<Integer>>{
             myArray.add(random.nextInt());
         }
         Collections.sort(myArray);
- //       Toast.makeText(context,"Finished Sorting",Toast.LENGTH_SHORT).show();
+        Log.i(TAG," **** ---- Load in background called...");
         return null;
     }
 
     @Override
     protected void onStartLoading(){
         forceLoad();
+        Log.i(TAG," **** ---- On Start Loading");
     }
 }
